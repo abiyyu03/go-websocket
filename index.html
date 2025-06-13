@@ -18,13 +18,13 @@
 
 			function connect() {
 				ws = new WebSocket('ws://localhost:8080/ws');
-
 				ws.onopen = function () {
 					console.log('Connected to websocket server');
 				};
 
 				ws.onmessage = function (event) {
 					let messageDisplay = document.getElementById('messages');
+
 					messageDisplay.innerHTML += `<p>${event.data}</p>`;
 				};
 
